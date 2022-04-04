@@ -9,8 +9,6 @@ public class BeanTest {
 
         ArrayList<String> name_artist = new ArrayList<String>();
 
-
-
     }
 
 }
