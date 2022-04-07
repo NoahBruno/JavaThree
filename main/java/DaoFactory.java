@@ -1,10 +1,13 @@
-public class DaoFactory {
-    private static Products productsDao;// field for the DAO we created
+import java.sql.SQLException;
 
-    public static Products getProductsDao(){
-        if (productsDao == null){
-            productsDao = new ListProducts();//mysqlDao
-        }//make a new data access object if one not found [null]
-        return productsDao;//return the one you found or the one you created on line 6
+public class DaoFactory {
+    private static Ads adsDao;
+    private static final Config config = new Config();
+
+    public static Ads getAdsDao() throws SQLException {
+        if (adsDao == null) {
+            adsDao = new MySQLAdsDao(config);
+        }
+        return adsDao;
     }
 }
